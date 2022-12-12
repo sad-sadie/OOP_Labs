@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<Devices xmlns="http://sadie.com.lab2/devices" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="http://sadie.com.lab2/devices MyXML.xsd">
+	<Device id="1">
+		<Name>iPod</Name>
+		<Origin>USA</Origin>
+		<Price>250.0</Price>
+		<ComponentsGroup>MULTIMEDIA</ComponentsGroup>
+			<Options>
+				<Peripherals>false</Peripherals>
+				<EnergyConsumption>5</EnergyConsumption>
+				<PresenceCooler>false</PresenceCooler>
+				<Ports>USB</Ports>
+			</Options>
+		<Critical>false</Critical>
+	</Device>
+	<Device id="2">
+		<Name>HP LaserJet 1022</Name>
+		<Origin>China</Origin>
+		<Price>200.0</Price>
+		<ComponentsGroup>PRINTER</ComponentsGroup>
+			<Options>
+				<Peripherals>true</Peripherals>
+				<EnergyConsumption>500</EnergyConsumption>
+				<PresenceCooler>true</PresenceCooler>
+				<Ports>LPT</Ports>
+			</Options>
+		<Critical>false</Critical>
+	</Device>
+	<Device id="3">
+		<Name>Sven S-50</Name>
+		<Origin>China</Origin>
+		<Price>100.0</Price>
+		<ComponentsGroup>SOUND</ComponentsGroup>
+			<Options>
+				<Peripherals>false</Peripherals>
+				<EnergyConsumption>50</EnergyConsumption>
+				<PresenceCooler>false</PresenceCooler>
+				<Ports>USB</Ports>
+			</Options>
+		<Critical>true</Critical>
+	</Device>
+</Devices>

@@ -1,0 +1,11 @@
+
+
+.idea/*
+
+
+target/*
+log/*
+
+# Diagram/*
+doc/*
+out/

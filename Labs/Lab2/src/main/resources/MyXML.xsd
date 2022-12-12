@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://sadie.com.lab2/devices"
+           xmlns:tns="http://sadie.com.lab2/devices"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+    <xs:element name="Devices">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Device" type="tns:Device" minOccurs="1" maxOccurs="unbounded">
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Device">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Origin" type="xs:string"/>
+            <xs:element name="Price" type="xs:double"/>
+            <xs:element name="ComponentsGroup" type="tns:ComponentsGroup"/>
+            <xs:element name="Options">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Peripherals" type="xs:boolean"/>
+                        <xs:element name="EnergyConsumption">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:int">
+                                    <xs:pattern value="[0-9]{1,4}"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PresenceCooler" type="xs:boolean"/>
+                        <xs:element name="Ports" type="tns:Port"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Critical" type="xs:boolean"/>
+        </xs:sequence>
+        <xs:attribute  name="id" use="optional" >
+            <xs:simpleType>
+                <xs:restriction base="xs:int">
+                    <xs:pattern value="[0-9]{1,10}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="ComponentsGroup">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="I/O"/>
+            <xs:enumeration value="MULTIMEDIA"/>
+            <xs:enumeration value="SOUND"/>
+            <xs:enumeration value="VIDEO"/>
+            <xs:enumeration value="PRINTER"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Port">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="COM"/>
+            <xs:enumeration value="USB"/>
+            <xs:enumeration value="LPT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
